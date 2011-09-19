@@ -1,6 +1,6 @@
 <?php
 /**
- * @package nxcTwitterFeed
+ * @package nxcTwitter
  * @author  Serhey Dolgushev <serhey.dolgushev@nxc.no>
  * @date    21 Sep 2010
  **/

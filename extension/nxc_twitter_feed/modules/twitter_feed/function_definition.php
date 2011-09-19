@@ -1,6 +1,6 @@
 <?php
 /**
- * @package nxcTwitterFeed
+ * @package nxcTwitter
  * @author  Serhey Dolgushev <serhey.dolgushev@nxc.no>
  * @date    21 Sep 2010
  **/
@@ -31,12 +31,12 @@ $FunctionList['timeline'] = array(
 );
 
 $FunctionList['user_info'] = array(
-	'name'             => 'user_info',
-	'call_method'      => array(
+	'name'           => 'user_info',
+	'call_method'    => array(
 		'class'  => 'nxcTwitterFeed',
 		'method' => 'getUserInfo'
 	),
-	'parameter_type'   => 'standard',
-	'parameters'       => array()
+	'parameter_type' => 'standard',
+	'parameters'     => array()
 );
 ?>

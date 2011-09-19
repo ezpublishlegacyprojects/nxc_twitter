@@ -1,13 +1,13 @@
 <?php
 /**
- * @package nxcTwitterPublish
+ * @package nxcTwitter
  * @class   nxcTwitterPublishType
  * @author  Serhey Dolgushev <serhey.dolgushev@nxc.no>
  * @date    29 Nov 2010
  **/
 
-class nxcTwitterPublishType extends eZWorkflowEventType {
-
+class nxcTwitterPublishType extends eZWorkflowEventType
+{
 	const TYPE_ID = 'nxctwitterpublish';
 
 	public static $eventParams = array(
@@ -39,7 +39,10 @@ class nxcTwitterPublishType extends eZWorkflowEventType {
 			$iniOAuthToken->variable( 'AccessToken', 'Secret' )
 		);
 
-		if( (bool) $event->attribute( self::$eventParams['publishOnlyOnCreate'] ) && $object->attribute( 'current_version' ) != 1 ) {
+		if(
+			(bool) $event->attribute( self::$eventParams['publishOnlyOnCreate'] )
+			&& $object->attribute( 'current_version' ) != 1
+		) {
 			return eZWorkflowType::STATUS_ACCEPTED;
 		}
 
@@ -101,12 +104,12 @@ class nxcTwitterPublishType extends eZWorkflowEventType {
 				return eZContentClass::fetchList( eZContentClass::VERSION_STATUS_DEFINED, true );
 			}
 			case 'contentclass_attribute_list': {
-            	$classList = $this->attribute( 'contentclass_list' );
-            	if( $this->attribute( 'current_class_id' ) !== 0 ) {
+				$classList = $this->attribute( 'contentclass_list' );
+				if( $this->attribute( 'current_class_id' ) !== 0 ) {
 					$classID = $this->attribute( 'current_class_id' );
-            	} else {
-            		$classID = isset( $classList[0] ) ? $classList[0]->attribute( 'id' ) : false;
-            	}
+				} else {
+					$classID = isset( $classList[0] ) ? $classList[0]->attribute( 'id' ) : false;
+				}
 
 				return is_numeric( $classID ) ? eZContentClassAttribute::fetchListByClassID( $classID ) : array();
 			}

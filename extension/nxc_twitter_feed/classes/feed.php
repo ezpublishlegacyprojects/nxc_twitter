@@ -1,13 +1,13 @@
 <?php
 /**
- * @package nxcTwitterFeed
+ * @package nxcTwitter
  * @class   nxcTwitterFeed
  * @author  Serhey Dolgushev <serhey.dolgushev@nxc.no>
  * @date    21 Sep 2010
  **/
 
-class nxcTwitterFeed {
-
+class nxcTwitterFeed
+{
 	private $twitterAPI;
 	private $cacheSettings;
 
@@ -33,7 +33,7 @@ class nxcTwitterFeed {
 			eZDebug::writeError( 'Type "' . $type . '" ins`t allowed', 'NXC Twitter feed' );
 			return false;
 		}
-		
+
 		$cacheFileHandler = eZClusterFileHandler::instance( $this->cacheSettings['path'] . $type . '_timeline.php' );
 
 		try{
@@ -61,24 +61,22 @@ class nxcTwitterFeed {
 							'extension/twitter_feed', '%secons seconds ago', null, array( '%secons' => ceil( $created_diff ) )
 						);
 					} elseif( $created_diff < 60 * 60 ) {
-						$created_ago = ezi18n(
+						$created_ago = ezpI18n::tr(
 							'extension/twitter_feed', '%minutes minutes ago', null, array( '%minutes' => floor( $created_diff / 60 ) )
 						);
 					} elseif( $created_diff < 60 * 60 * 24 ) {
-						$created_ago = ezi18n(
+						$created_ago = ezpI18n::tr(
 							'extension/twitter_feed', 'About %hours hours ago', null, array( '%hours' => floor( $created_diff / ( 60 * 60 ) ) )
 						);
 					} elseif( $created_diff < 60 * 60 * 24 * 7 ) {
-						$created_ago = ezi18n(
+						$created_ago = ezpI18n::tr(
 							'extension/twitter_feed', 'About %days days ago', null, array( '%days' => floor( $created_diff / ( 60 * 60 * 24 ) ) )
 						);
 					} else {
-						$created_ago = ezi18n(
+						$created_ago = ezpI18n::tr(
 							'extension/twitter_feed', 'About %weeks weeks ago', null, array( '%weeks' => floor( $created_diff / ( 60 * 60 * 24 * 7 ) ) )
 						);
 					}
-
-
 
 					$status = self::objectToArray( $status );
 					$status['created_timestamp'] = $created_at;

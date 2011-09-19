@@ -1,6 +1,6 @@
 <?php
 /**
- * @package nxcTwitterSignin
+ * @package nxcTwitter
  * @author  Serhey Dolgushev <serhey.dolgushev@nxc.no>
  * @date    26 Nov 2010
  **/

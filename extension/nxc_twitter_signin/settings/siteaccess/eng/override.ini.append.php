@@ -4,5 +4,4 @@
 Source=user/login.tpl
 MatchFile=user/login_with_tweeter.tpl
 Subdir=templates
-
 */ ?>

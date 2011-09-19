@@ -1,10 +1,9 @@
 <?php
 /**
- * @package nxcTwitterAPI
+ * @package nxcTwitter
  * @author  Serhey Dolgushev <serhey.dolgushev@nxc.no>
  * @date    17 Sep 2010
  **/
-
 
 $http = eZHTTPTool::instance();
 $ini  = eZINI::instance( 'nxctwitter.ini' );

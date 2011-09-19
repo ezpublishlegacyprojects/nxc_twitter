@@ -1,6 +1,6 @@
 <?php
 /**
- * @package nxcTwitterAPI
+ * @package nxcTwitter
  * @author  Serhey Dolgushev <serhey.dolgushev@nxc.no>
  * @date    17 Sep 2010
  **/
@@ -8,7 +8,8 @@
 $http = eZHTTPTool::instance();
 $ini  = eZINI::instance( 'nxctwitter.ini' );
 
-if( $http->hasGetVariable( 'twitter_request_token' ) &&
+if(
+	$http->hasGetVariable( 'twitter_request_token' ) &&
 	( $http->getVariable( 'twitter_request_token' ) !== $http->sessionVariable( 'twitter_request_token' ) )
 ) {
 	$Params['Module']->redirectTo( '/nxc_twitter_api/settings' );

@@ -1,4 +1,4 @@
-<?php /* #?ini charset="iso-8859-1"?
+<?php /* #?ini charset="utf-8"?
 
 [TwitterAPI]
 Key=kvYRwQrnPeaDfd0kj63WCQ

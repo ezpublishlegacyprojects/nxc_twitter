@@ -4,5 +4,5 @@
 DesignExtensions[]=nxc_twitter_api
 
 [StylesheetSettings]
-CSSFileList[]=nxc_twitter_api.css
+BackendCSSFileList[]=nxc_twitter_api.css
 */ ?>
